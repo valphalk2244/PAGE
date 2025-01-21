@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function page() {
     const [fruit, setFruit] = useState('Apple');
@@ -8,6 +8,10 @@ export default function page() {
     const toApple = () => { setFruit('Apple') };
     const toOrange = () => { setFruit('Orange') };
     const toPapaya = () => { setFruit('Papaya') };
+
+    useEffect(() => {
+        document.title =  `My fruit is ${fruit}` ;
+     });
     return (
         <div>
             <p>{fruit}</p>
@@ -20,3 +24,5 @@ export default function page() {
         </div>
     )
 }
+
+
